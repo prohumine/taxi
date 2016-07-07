@@ -1,0 +1,23 @@
+{
+  "name": "taxi",
+  "version": "1.0.0",
+  "description": "App to manage a taxi company",
+  "main": "app.js",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/prohumine/taxi.git"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "taxi"
+  ],
+  "author": "Marvin Santizo",
+  "license": "ISC",
+  "dependencies": {
+    "restify": "^4.1.1",
+    "restify-validation": "git://github.com/Akirix/restify-validation.git"
+  }
+}
