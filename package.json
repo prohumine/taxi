@@ -17,7 +17,9 @@
   "author": "Marvin Santizo",
   "license": "ISC",
   "dependencies": {
+    "mysql": "^2.11.1",
     "restify": "^4.1.1",
-    "restify-validation": "git://github.com/Akirix/restify-validation.git"
+    "restify-validation": "git://github.com/Akirix/restify-validation.git",
+    "sequelize": "^3.23.4"
   }
 }

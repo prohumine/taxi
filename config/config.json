@@ -1,0 +1,13 @@
+{
+	"database": {
+		"db": "taxi",
+		"host": "127.0.0.1",
+		"user": "root",
+		"password": ""
+	},
+	"api": {
+		"name": "Taxi",
+		"host": "http://localhost:",
+		"port": 3000
+	}
+}
