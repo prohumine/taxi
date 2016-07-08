@@ -6,7 +6,7 @@ module.exports = function( sequelize, DataTypes ){
 		}
 	},
 	{
-		tableName: 'vehicle'
+		tableName: 'vehicles'
 	} );
 	return Vehicle;
 };

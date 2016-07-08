@@ -16,7 +16,7 @@ server.use( restifyValidation() );
 
 restify.CORS.ALLOW_HEADERS.push( 'authorization' );
 
-db.sequelize.sync( { force: true } ).then( function(){
+db.sequelize.sync( { force: false } ).then( function(){
 	server.listen( config.api.port, function(){
 		console.log( "Server listening on port " + config.api.port );
 	} );

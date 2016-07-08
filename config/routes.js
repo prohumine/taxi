@@ -5,7 +5,6 @@ module.exports = function( server ){
 	server.post( '/drivers', cont.drivers.create );
 	server.get( '/drivers/:driver_id', cont.drivers.view );
 	server.put( '/drivers/:driver_id', cont.drivers.update );
-	server.del( '/drivers/:driver_id', cont.drivers.delete );
 
 	server.get( '/vehicles', cont.vehicles.index );
 	server.post( '/vehicles', cont.vehicles.create );

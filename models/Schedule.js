@@ -14,7 +14,7 @@ module.exports = function( sequelize, DataTypes ){
 		}
 	},
 	{
-		tableName: "schedule",
+		tableName: "schedules",
 		associate: function( models ){
 			Schedule.belongsTo( models.Driver );
 		}

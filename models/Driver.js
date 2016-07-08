@@ -15,7 +15,7 @@ module.exports = function( sequlize, DataTypes ){
 		}
 	},
 	{
-		tableName: 'driver',
+		tableName: 'drivers',
 		associate: function( models ){
 			Driver.hasMany( models.Schedule );
 		}
