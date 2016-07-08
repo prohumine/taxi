@@ -5,10 +5,12 @@ exports.index = function( req, res, next ){
 
 	Driver.findAll()
 		.then( function( drivers ){
+
 			res.send( 200, { drivers: drivers } );
 			return next();
 		} )
 		.catch( function( err ){
+			
 			console.log( err )
 			res.send( 400, { err: err } );
 			return next();
