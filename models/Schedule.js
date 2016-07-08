@@ -9,7 +9,8 @@ module.exports = function( sequelize, DataTypes ){
 			allowNull: false
 		},
 		driver_id: {
-			type: DataTypes.CHAR
+			type: DataTypes.UUID,
+			allowNull: true
 		}
 	},
 	{

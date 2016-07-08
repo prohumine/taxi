@@ -2,6 +2,7 @@ module.exports = function( sequlize, DataTypes ){
 	var Driver = sequlize.define( "Driver", {
 		id: {
 			type: DataTypes.UUID,
+			defaultValue: DataTypes.UUIDV1,
 			primaryKey: true
 		},
 		firstName: {
