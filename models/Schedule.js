@@ -2,6 +2,7 @@ module.exports = function( sequelize, DataTypes ){
 	var Schedule = sequelize.define( "Schedule", {
 		id: {
 			type: DataTypes.UUID,
+			defaultValue: DataTypes.UUIDV1,
 			primaryKey: true
 		},
 		day: {
