@@ -9,12 +9,9 @@ var server = restify.createServer( {
 server.use( restify.acceptParser( server.acceptable ) );
 server.use( restify.queryParser() );
 server.use( restify.bodyParser() );
-server.use( restify.authorizationParser() );
 server.use( restify.CORS() );
 server.use( restify.fullResponse() );
 server.use( restifyValidation() );
-
-restify.CORS.ALLOW_HEADERS.push( 'authorization' );
 
 db.sequelize.sync( { force: false } ).then( function(){
 	server.listen( config.api.port, function(){

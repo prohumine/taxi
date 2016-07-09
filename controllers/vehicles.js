@@ -87,3 +87,24 @@ exports.update = function( req, res, next ){
 			return next();
 		} );
 };
+
+exports.destroy = function( req, res, next ){
+
+	req.assert( 'vehicle_id', 'isString' );
+
+	Vehicle.findById( req.params.vehicle_id )
+		.then( function( dbVechicle ){
+		
+			dbVechicle.destroy().then( function(){
+
+				res.send( 200, { vehicle: dbVechicle } );
+				return next();
+			} );
+		} )
+		.catch( function( err ){
+
+			console.log( err );
+			res.send( 400, { err: err } );
+			return next();
+		} );
+};

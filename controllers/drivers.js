@@ -82,3 +82,24 @@ exports.update = function( req, res, next ){
 			return next();
 		} );
 };
+
+exports.destroy = function( req, res, next ){
+
+	req.assert( 'driver_id', 'isString' );
+
+	Driver.findById( req.params.driver_id )
+		.then( function( dbDriver ){
+		
+			dbDriver.destroy().then( function(){
+
+				res.send( 200, { driver: dbDriver } );
+				return next();
+			} );
+		} )
+		.catch( function( err ){
+
+			console.log( err );
+			res.send( 400, { err: err } );
+			return next();
+		} );
+};

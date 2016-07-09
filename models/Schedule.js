@@ -12,12 +12,17 @@ module.exports = function( sequelize, DataTypes ){
 		driver_id: {
 			type: DataTypes.UUID,
 			allowNull: true
+		},
+		vehicle_id: {
+			type: DataTypes.UUID,
+			allowNull: true
 		}
 	},
 	{
 		tableName: "schedules",
 		associate: function( models ){
 			Schedule.belongsTo( models.Driver );
+			Schedule.belongsTo( models.Vehicles );
 		}
 	} );
 	return Schedule;

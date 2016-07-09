@@ -17,7 +17,7 @@ module.exports = function( sequelize, DataTypes ){
 		}
 	},
 	{
-		tableName: 'vehicles'
+		tableName: 'vehicles',
 	} );
 	return Vehicle;
 };
