@@ -17,4 +17,5 @@ module.exports = function( server ){
 	server.post( '/schedules', cont.schedules.create );
 	server.get( '/schedules/:schedule_id', cont.schedules.view );
 	server.put( '/schedules/:schedule_id', cont.schedules.update );
+	server.del( '/schedules/:schedule_id', cont.schedules.destroy );
 };
