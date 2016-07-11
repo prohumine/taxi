@@ -42,10 +42,11 @@ exports.index = function( req, res, next ){
 					promises.push( Driver.findById( day.driver_id ).then( function( driver ){
 						day.dataValues.driver = driver;
 					} ) );
-					promises.push( Vehicle.findById( day.vehicle_id ) );
+					promises.push( Vehicle.findById( day.vehicle_id ).then( function( vehicle ){
+						day.dataValues.vehicle = vehicle;
+					} ) );
 				} );
 				Promise.all( promises ).then( function( results ){
-					
 					res.send( 200, { schedules: schedules } );
 					return next();
 				} );
@@ -53,8 +54,12 @@ exports.index = function( req, res, next ){
 		} )
 		.catch( function( err ){
 
-			console.log( err );
-			res.send( 400, { err: err } );
+			res.send( 400, {
+				errors: [ {
+					status: 400,
+					message: err
+				} ]
+			} );
 			return next();
 		} );
 };
@@ -76,8 +81,12 @@ exports.create = function( req, res, next ){
 		return next();
 	} ).catch( function( err ){
 
-		console.log( err );
-		res.send( 400, { err: err } );
+		res.send( 400, {
+			errors: [ {
+				status: 400,
+				message: err
+			} ]
+		} );
 		return next();
 	} );
 };
@@ -94,8 +103,12 @@ exports.view = function( req, res, next ){
 		} )
 		.catch( function( err ){
 
-			console.log( err );
-			res.send( 400, { err: err } );
+			res.send( 400, {
+				errors: [ {
+					status: 400,
+					message: err
+				} ]
+			} );
 			return next();
 		} );
 };
@@ -124,8 +137,12 @@ exports.update = function( req, res, next ){
 		} )
 		.catch( function( err ){
 
-			console.log( err );
-			res.send( 400, { err: err } );
+			res.send( 400, {
+				errors: [ {
+					status: 400,
+					message: err
+				} ]
+			} );
 			return next();
 		} );
 };
@@ -145,8 +162,12 @@ exports.destroy = function( req, res, next ){
 		} )
 		.catch( function( err ){
 
-			console.log( err );
-			res.send( 400, { err: err } );
+			res.send( 400, {
+				errors: [ {
+					status: 400,
+					message: err
+				} ]
+			} );
 			return next();
 		} );
 };
